@@ -6,5 +6,5 @@
   
 我是第一次画4层板，还是有很多不足的地方，用来学习应该没问题  
 大致流程就是在社区帮助下移植好linux就可以白嫖了注意设备树添加是不一样的  
-kicad6.0 ubuntu18 linux5.7.1
+kicad6.0 ubuntu18 linux5.7.1  
 最后附上社区地址https://whycan.com/
