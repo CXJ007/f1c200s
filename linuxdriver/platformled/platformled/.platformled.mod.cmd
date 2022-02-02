@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.mod := { echo  /home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.o; echo; } > /home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.mod

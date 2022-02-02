@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/atomicled/led/ledatomic.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/atomicled/led/ledatomic.ko /home/cxj/Desktop/linuxdriver/atomicled/led/ledatomic.o /home/cxj/Desktop/linuxdriver/atomicled/led/ledatomic.mod.o;  true

@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.mod := { echo  /home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.o; echo; } > /home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.mod

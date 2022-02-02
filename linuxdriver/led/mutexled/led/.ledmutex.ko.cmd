@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/mutexled/led/ledmutex.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/mutexled/led/ledmutex.ko /home/cxj/Desktop/linuxdriver/mutexled/led/ledmutex.o /home/cxj/Desktop/linuxdriver/mutexled/led/ledmutex.mod.o;  true

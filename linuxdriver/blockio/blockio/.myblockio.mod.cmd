@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/blockio/blockio/myblockio.mod := { echo  /home/cxj/Desktop/linuxdriver/blockio/blockio/myblockio.o; echo; } > /home/cxj/Desktop/linuxdriver/blockio/blockio/myblockio.mod

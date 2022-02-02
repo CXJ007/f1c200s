@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/irq/irq/myirq.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/irq/irq/myirq.ko /home/cxj/Desktop/linuxdriver/irq/irq/myirq.o /home/cxj/Desktop/linuxdriver/irq/irq/myirq.mod.o;  true

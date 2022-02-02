@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/spinled/led/ledspin.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/spinled/led/ledspin.ko /home/cxj/Desktop/linuxdriver/spinled/led/ledspin.o /home/cxj/Desktop/linuxdriver/spinled/led/ledspin.mod.o;  true

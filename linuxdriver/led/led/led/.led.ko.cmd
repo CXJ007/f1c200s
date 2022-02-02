@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/led/led/led/led.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/led/led/led/led.ko /home/cxj/Desktop/linuxdriver/led/led/led/led.o /home/cxj/Desktop/linuxdriver/led/led/led/led.mod.o;  true

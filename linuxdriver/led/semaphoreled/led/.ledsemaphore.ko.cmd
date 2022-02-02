@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.ko /home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.o /home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.mod.o;  true

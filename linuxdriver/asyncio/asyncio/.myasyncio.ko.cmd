@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.ko /home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.o /home/cxj/Desktop/linuxdriver/asyncio/asyncio/myasyncio.mod.o;  true

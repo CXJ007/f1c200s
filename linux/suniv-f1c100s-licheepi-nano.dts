@@ -1,0 +1,163 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+/*
+ * Copyright 2018 Icenowy Zheng <icenowy@aosc.io>
+ */
+
+/dts-v1/;
+#include "suniv-f1c100s.dtsi"
+
+
+/ {
+	model = "Lichee Pi Nano";
+	compatible = "licheepi,licheepi-nano", "allwinner,suniv-f1c100s";
+
+	aliases {
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	reg_vcc3v3: vcc3v3 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc3v3";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+	};
+
+	led {
+			compatible = "cxj,my_led";
+			pinctrl-names = "default";
+			pinctrl-0 = <&led_pins>;
+			led-gpios = <&pio 4 2 GPIO_ACTIVE_LOW>;
+			status = "okay";
+		};
+	
+	// key {
+	// 		compatible = "cxj,my_key";
+	// 		pinctrl-names = "default";
+	// 		pinctrl-0 = <&key_pins>;
+	// 		key-gpios = <&pio 3 15 GPIO_ACTIVE_LOW>;
+	// 	};
+
+	// keyirq {
+	// 		compatible = "cxj,my_irq";
+	// 		pinctrl-names = "default";
+	// 		pinctrl-0 = <&irq_pins>;
+	// 		irq-gpios = <&pio 3 16 GPIO_ACTIVE_LOW>;
+			
+	// 		interrupt-parent = <&pio>;
+	// 		interrupts = <3 16 IRQ_TYPE_EDGE_BOTH>;
+	// 		status = "okay";
+	// 	};	
+
+	dtsleds {
+			compatible = "gpio-leds";
+			led0 {
+				function = LED_FUNCTION_HEARTBEAT;
+				color = <LED_COLOR_ID_AMBER>;
+				gpios = <&pio 4 2 GPIO_ACTIVE_LOW>;
+				linux,default-trigger = "heartbeat";
+				default-state = "on";
+			};
+		};
+
+	// gpio-keys {
+	// 		compatible = "gpio-keys";
+	// 		autorepeat;
+	// 		key0 {
+	// 			label = "GPIO Key Enter";
+	// 			linux,code = <28>;
+	// 			gpios = <&pio 3 15 GPIO_ACTIVE_LOW>;
+	// 		};
+	// 	};
+
+	st7789 {
+		compatible = "cxj,8080";
+		pinctrl = <&tft8_pins>;
+		res-gpios = <&pio 3 0 GPIO_ACTIVE_LOW>;
+		cs-gpios = <&pio 3 1 GPIO_ACTIVE_LOW>;
+		dc-gpios = <&pio 3 2 GPIO_ACTIVE_LOW>;
+		wr-gpios = <&pio 3 3 GPIO_ACTIVE_LOW>;
+		rd-gpios = <&pio 3 4 GPIO_ACTIVE_LOW>;
+		db-gpios = <&pio 3 5 GPIO_ACTIVE_LOW>,//db0
+				   <&pio 3 6 GPIO_ACTIVE_LOW>,
+				   <&pio 3 7 GPIO_ACTIVE_LOW>,
+				   <&pio 3 8 GPIO_ACTIVE_LOW>,
+				   <&pio 3 9 GPIO_ACTIVE_LOW>,
+				   <&pio 3 10 GPIO_ACTIVE_LOW>,
+				   <&pio 3 11 GPIO_ACTIVE_LOW>,
+				   <&pio 3 12 GPIO_ACTIVE_LOW>;//db7
+//		tf-gpios = <&pio 3 13 GPIO_ACTIVE_LOW>;
+// 		interrupt-parent = <&pio>;
+// 		interrupts = <3 16 IRQ_TYPE_EDGE_BOTH>;
+// 		status = "okay";
+	};
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pe_pins>;
+	status = "okay";
+};
+
+&mmc0 {
+        vmmc-supply = <&reg_vcc3v3>;
+        bus-width = <4>;
+        broken-cd;
+        status = "okay";
+};
+
+&i2c0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c0_pe_pins>;
+	clock-frequency = <100000>;
+	status = "okay";
+
+	mpu@68 {
+		compatible = "cxj,mpu6050";
+		reg = <0x68>;
+	};	
+};
+
+&spi0 {
+	status = "okay"; 
+	//bias-pull-up;
+	pinctrl-names = "default";
+	pinctrl-0 = <&spi0_pd_pins>;
+	    st7735r@0{
+			compatible = "sitronix,st7735r";
+			reg = <0>;
+			status = "okay";
+			spi-max-frequency = <36000000>;
+			spi-cpol;
+			spi-cpha;
+			rgb;
+			rotate = <90>;
+			fps = <60>;
+			buswidth = <8>;
+			dc-gpios = <&pio 3 16 GPIO_ACTIVE_HIGH>;
+			reset-gpios = <&pio 3 17 GPIO_ACTIVE_HIGH>;
+			//led-gpios = <&pio 3 15 GPIO_ACTIVE_LOW>;  //blk
+			debug = <0x0>;
+        };
+}; 
+
+&spi1 {
+		pinctrl-names = "default";
+		pinctrl-0 = <&spi1_pe_pins>;
+        status = "okay";   
+        esp8089@0 {
+            status = "okay";
+            compatible = "boss,esp8089";
+            spi-cpol;
+            spi-cpha;
+            reg = <0>;
+            spi-max-frequency = <30000000>;
+            reset= <132>; //PE4
+            interrupt= <133>; //PE5
+            debug= <0>;
+        };
+        
+};

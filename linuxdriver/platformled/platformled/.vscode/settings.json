@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "module.h": "c",
+        "gpio.h": "c",
+        "platform_device.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

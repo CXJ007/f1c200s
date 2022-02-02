@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/mpu6050/mpu6050/mpu6050.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/mpu6050/mpu6050/mpu6050.ko /home/cxj/Desktop/linuxdriver/mpu6050/mpu6050/mpu6050.o /home/cxj/Desktop/linuxdriver/mpu6050/mpu6050/mpu6050.mod.o;  true

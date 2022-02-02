@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/key/key/mykey.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/key/key/mykey.ko /home/cxj/Desktop/linuxdriver/key/key/mykey.o /home/cxj/Desktop/linuxdriver/key/key/mykey.mod.o;  true

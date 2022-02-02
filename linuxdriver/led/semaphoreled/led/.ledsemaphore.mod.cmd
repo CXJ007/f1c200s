@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.mod := { echo  /home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.o; echo; } > /home/cxj/Desktop/linuxdriver/semaphoreled/led/ledsemaphore.mod

@@ -1,0 +1,1 @@
+cmd_/home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.ko := arm-linux-gnueabi-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -o /home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.ko /home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.o /home/cxj/Desktop/linuxdriver/platformled/platformled/platformled.mod.o;  true
